@@ -7,6 +7,7 @@ void findturn(int n,int wait[],int burst[],int turn[],int p[]){
 		printf("%d         %d               %d               %d \n",p[i],wait[i],burst[i],turn[i]);
 	}
 }
+
 void sort(int burst[],int n,int p[]){
 	int i,j,temp,tempp;
 	for(i=0;i<n;i++)
@@ -24,6 +25,7 @@ void sort(int burst[],int n,int p[]){
 		}
 	}
 }
+
 void findwait(int n,int wait[],int burst[],int turn[],int p[]){
 	int i;
 	wait[0]=0;

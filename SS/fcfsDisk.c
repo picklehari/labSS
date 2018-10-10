@@ -1,11 +1,9 @@
 #include<stdio.h>
-#include<conio.h>
+#include<stdlib.h>
 void main()
 {
              int queue[100],n,head,i,j,k,seek=0,diff;
              float avg;
-             // clrscr();
-             printf("*** FCFS Disk Scheduling Algorithm ***\n");
              printf("Enter the size of Queue\t");
              scanf("%d",&n);
              printf("Enter the Queue\t");
@@ -26,5 +24,4 @@ void main()
              printf("\nTotal Seek Time is %d\t",seek);
              avg=seek/(float)n;
              printf("\nAverage Seek Time is %f\t",avg);
-             getch();
 }

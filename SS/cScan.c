@@ -1,5 +1,5 @@
-#include<stdio.h>
 
+#include<stdio.h>
 void main() {
 	int n;
 	printf("Enter the no. size of queue: ");
@@ -43,14 +43,15 @@ void main() {
 	if(step==-1) {
 		for(i=headPos;i>0;i--) {
       printf("%d\n",newQ[i]);
-      seek+=newQ[i]-newQ[i-1];
+			seek+=newQ[i]-newQ[i-1];
 		}
-		seek+=newQ[i];
     printf("%d\n",newQ[i]);
-		seek+=newQ[headPos+1];
-		for(i=headPos+1;i<n;i++) {
-      printf("%d\n",newQ[i]);
-			seek+=newQ[i+1]-newQ[i];
+		seek+=newQ[i];
+		seek+=diskSize-newQ[n];
+    printf("%d\n",newQ[i]);
+		for(i=n;i>headPos+1;i--) {
+        printf("%d\n",newQ[i]);
+			seek+=newQ[i]-newQ[i-1];
 		}
 	}
 	else {
@@ -59,11 +60,10 @@ void main() {
 			seek+=newQ[i+1]-newQ[i];
 		}
 		seek+=diskSize-newQ[i];
-    printf("%d\n",newQ[i]);
-		seek+=diskSize-newQ[headPos-1];
-    		for(i=headPos-1;i>0;i--) {
+		seek+=newQ[0];
+		for(i=0;i<headPos-1;i++) {
       printf("%d\n",newQ[i]);
-      seek+=newQ[i]-newQ[i-1];
+			seek+=newQ[i+1]-newQ[i];
 		}
 	}
 
